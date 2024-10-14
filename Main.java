@@ -7,12 +7,12 @@ public class Main {
     public static PrintStream out = System.out;
     public static void main(String[] args) {
 
-        int n1 = in.nextInt();
-        int n2 = in.nextInt();
-        int n3 = in.nextInt();
-        int n4 = in.nextInt();
+        long n1 = in.nextLong();
+        long n2 = in.nextLong();
+        long n3 = in.nextLong();
+        long n4 = in.nextLong();
 
-        int[] m = {n1, n2, n3, n4};
+        Long[] m = {n1, n2, n3, n4};
         Arrays.sort(m);
 
         out.print(m[2]);
