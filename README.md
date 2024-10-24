@@ -62,22 +62,27 @@ graph TD
 ```java
 import java.util.Scanner;
 import java.io.PrintStream;
-import java.util.Arrays;
 
 public class Main {
     public static Scanner in = new Scanner(System.in);
     public static PrintStream out = System.out;
-    public static void main(String[] args) {
 
+    public static void main(String[] args)
+    {
         long n1 = in.nextLong();
         long n2 = in.nextLong();
         long n3 = in.nextLong();
         long n4 = in.nextLong();
 
-        Long[] m = {n1, n2, n3, n4};
-        Arrays.sort(m);
-
-        out.print(m[2]);
+        if ((n1 > n2 && n1 > n3 && n1 < n4) || (n1 > n4 && n1 > n3 && n1 < n2) || (n1 > n4 && n1 > n2 && n1 < n3)) {
+            out.println(n1);
+        } else if ((n2 > n1 && n2 > n3 && n2 < n4) || (n2 > n4 && n2 > n3 && n2 < n1) || (n2 > n4 && n2 > n1 && n2 < n3)) {
+            out.println(n2);
+        } else if ((n3 < n1 && n3 > n2 && n3 > n4) || (n3 < n4 && n3 > n2 && n3 > n1) || (n3 < n2 && n3 > n1 && n3 > n4)) {
+            out.println(n3);
+        } else if ((n4 < n1 && n4 > n2 && n4 > n3) || (n4 < n2 && n4 > n1 && n4 > n3) || (n4 < n3 && n4 > n1 && n4 > n2)) {
+            out.println(n4);
+        }
     }
 }
 ```
@@ -88,15 +93,15 @@ public class Main {
 
 - Input:
     ```
-    1
-    1
-    1
     3
+    2
+    1
+    4
     ```
 
 - Output:
     ```
-    1
+    3
     ```
 
 2. Тест
@@ -104,15 +109,16 @@ public class Main {
 - Input:
     ```
     1
-    0
-    0
-    -1
+    3
+    2
+    4
     ```
 
 - Output:
     ```
-    0
+    3
     ```
+
 3. Тест
 
 - Input:
@@ -121,6 +127,20 @@ public class Main {
     2
     3
     4
+    ```
+
+- Output:
+    ```
+    3
+    ```
+4. Тест
+
+- Input:
+    ```
+    1
+    2
+    4
+    3
     ```
 
 - Output:
